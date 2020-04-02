@@ -5,7 +5,6 @@ import {
   StyleSheet,
   processColor
 } from 'react-native';
-import strings from '../../localization/Localized';
 import { BarChart, Grid, YAxis, XAxis } from 'react-native-svg-charts';
 import * as scale from 'd3-scale';
 import * as d3 from 'd3';
@@ -90,13 +89,8 @@ export class TestBubble extends React.Component {
     ]
 
     const {
-      overflow,
-      graph,
       height,
       width,
-      padding,
-      showLegend,
-      legendPercentage,
     } = this.props;
 
     let pack = data => d3.pack()
@@ -139,16 +133,11 @@ export class TestBubble extends React.Component {
       )
     }
 
-    console.log('leaves are', leaves)
-
     return (
       <View style={styles.container}>
-        <Text style={styles.desctitle}>{strings.most_common_tattoo}</Text>
-        <View style={{ flex: 1, flexDirection: 'row', padding: 10 }}>
-          <Svg style={{ overflow: overflow ? 'visible' : 'hidden' }} width={400} height={300}>
-            {leaves}
-          </Svg>
-        </View>
+        <Svg width={width || 400} height={height || 300}>
+          {leaves}
+        </Svg>
       </View>
     )
   }
@@ -158,30 +147,5 @@ export class TestBubble extends React.Component {
 const styles = {
   container: {
     flex: 1,
-  },
-  title: {
-    padding: 10, fontSize: 16, color: '#2F2F34', fontFamily: 'Montserrat-Regular'
-  },
-  descriptionview: {
-    flexDirection: 'row', alignItems: 'center'
-  },
-  desctitle: {
-    padding: 10, fontSize: 13, color: '#74787C', fontFamily: 'Montserrat-SemiBold'
-  },
-  weektext: {
-    color: '#45454E', fontSize: 13, fontFamily: 'Montserrat-Light', paddingRight: 15
-  },
-  dotview: {
-    height: 13, width: 13, borderRadius: 7.5, marginRight: 5
-  },
-  xaxistext: {
-    fontSize: 11, color: '#74787C', fontFamily: 'Montserrat-Regular'
-  },
-  xaxisview: {
-    flexDirection: 'row', paddingVertical: 10, paddingHorizontal: 20,
-    justifyContent: 'space-around',
-  },
-  chart: {
-    flex: 1
   }
 }
