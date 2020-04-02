@@ -1,0 +1,27 @@
+{
+  "name": "rn-bubble-chart",
+  "version": "1.0.0",
+  "description": "A simple bubble chart component generated with d3 and rn-svg",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshit5230/React-Native-Bubble-Chart.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "bubble",
+    "chart",
+    "d3",
+    "svg"
+  ],
+  "author": "Akshit W",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akshit5230/React-Native-Bubble-Chart/issues"
+  },
+  "homepage": "https://github.com/akshit5230/React-Native-Bubble-Chart#readme"
+}
